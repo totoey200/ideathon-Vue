@@ -76,3 +76,10 @@ export default {
   }
 }
 </script>
+<style>
+.container img {
+    width: 80%;
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+</style>
