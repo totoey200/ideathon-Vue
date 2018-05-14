@@ -2,7 +2,7 @@
   <div class="hello">
     <my-nav/>
     <span v-for="idea in ideas" :key="idea.id">
-      <team-card :title='idea.title' :content='idea.content' :img_url='idea.img_url'></team-card>
+      <team-card :title='idea.title' :content='idea.content' :img_url='idea.img_url' :vote_cnt='idea.vote_cnt' :name='idea.name'></team-card>
     </span>
   </div>
 </template>

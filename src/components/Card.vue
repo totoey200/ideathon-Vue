@@ -14,9 +14,9 @@
                 <div class="align-self-center">
                     <a href="#" class="btn btn-primary">투표하기</a>
                 </div>
-                <small>3 vote</small>
+                <small>{{vote_cnt}} vote</small>
             </div>
-            <small>team name</small>
+            <small>{{name}}</small>
         </div>
     </div>
 </template>
@@ -24,7 +24,7 @@
 <script>
 export default {
   name: 'Card',
-  props: ['img_url', 'title', 'content']
+  props: ['img_url', 'title', 'content', 'vote_cnt', 'name']
 }
 </script>
 <style>
