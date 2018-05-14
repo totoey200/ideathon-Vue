@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h1>아이디어 생성</h1>
-    <vue-base64-file-upload 
+    <vue-base64-file-upload
         class="v1"
         accept="image/png,image/jpeg"
         image-class="v1-image"
@@ -33,7 +33,7 @@ import Vue from 'vue';
 import VueBase64FileUpload from 'vue-base64-file-upload';
 
 export default {
-  name: 'Login',
+  name: 'CreateIdea',
   data () {
     return {
       customImageMaxSize: 3, // megabytes
@@ -65,10 +65,8 @@ export default {
         content: this.idea.content,
         team_name: this.idea.team_name
       }
-      console.log(idea)
-      var context = this
       axios.post('http://localhost:3000/api/idea',idea).then((rep) => {
-        context.$router.push('/home')
+        this.$router.push('/home')
       })
     }
   },
