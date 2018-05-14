@@ -52,7 +52,6 @@ export default {
     }
   },
   beforeCreate () {
-    console.log(axios.defaults.headers.common['x-access-token'])
     auth.checkAuth()
   }
 }
