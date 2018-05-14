@@ -6,7 +6,7 @@
                     <img class="img-locate" :src='img_url' alt="Card image cap">
                 </div>
                 <div class="align-self-center">
-                        <h5 class="m-0">{{title}}ㄹ</h5>
+                        <h5 class="m-0">{{title}}</h5>
                     </div>
                 <div class="align-self-center">
                     <p class="mb-1">{{content}}</p>
@@ -41,7 +41,7 @@ export default {
 }
 @media (min-width: 300px) {
     .img-locate{
-    max-width: 100%;
+    max-width: 300%;
     height: auto;
     margin: 0 auto;
   }
