@@ -9,7 +9,8 @@
         :max-size="customImageMaxSize"
         @size-exceeded="onSizeExceeded"
         @file="onFile"
-        @load="onLoad" />
+        @load="onLoad"
+        placeholder="Click here to upload image (이미지는 jpg, png만 업로드 가능합니다.)" />
     <div class="form-group">
       <label>아이디어 이름</label>
       <input type="text" class="form-control" maxlength="50" v-model="idea.title" placeholder="아이디어 이름">
