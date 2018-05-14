@@ -11,6 +11,7 @@
         class="form-control"
         placeholder="Enter your username"
         v-model="credentials.username"
+        v-on:keyup.enter="submit()"
       >
     </div>
     <div class="form-group">
@@ -19,12 +20,14 @@
         class="form-control"
         placeholder="Enter your password"
         v-model="credentials.password"
+        v-on:keyup.enter="submit()"
       >
     </div>
     <button class="btn btn-primary" @click="submit()">로그인</button>
   </div>
 </template>
 <script>
+import auth from '../auth'
 
 export default {
   name: 'Login',
@@ -43,7 +46,8 @@ export default {
         username: this.credentials.username,
         password: this.credentials.password
       }
-      location.href = 'home'
+      console.log(credentials)
+      auth.login(this, credentials, '/home')
     }
   }
 

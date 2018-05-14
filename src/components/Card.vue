@@ -11,9 +11,7 @@
 
 <script>
 export default {
-  name: 'Card',
-  data () {
-  }
+  name: 'Card'
 }
 </script>
 <style>
