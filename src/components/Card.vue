@@ -39,7 +39,7 @@ export default {
     max-width: 100%;
     height: auto;
 }
-@media (min-width: 300px) {
+@media (max-width: 500px) {
     .img-locate{
     max-width: 300%;
     height: auto;
