@@ -6,17 +6,19 @@
                     <img class="img-locate" :src='img_url' alt="Card image cap">
                 </div>
                 <div class="align-self-center">
-                        <h5 class="m-0">{{title}}</h5>
+                        <h5 class="m-0 text-wrap">{{title}}</h5>
                     </div>
                 <div class="align-self-center">
-                    <p class="mb-1">{{content}}</p>
+                    <p class="mb-1 text-wrap">{{content}}</p>
                 </div >
                 <div class="align-self-center">
                     <a href="#" class="btn btn-primary">투표하기</a>
                 </div>
-                <small>{{vote_cnt}} vote</small>
+                <div>
+                    <small>{{vote_cnt}} vote</small>
+                </div>
             </div>
-            <small>{{name}}</small>
+            <small>팀명 : {{name}}</small>
         </div>
     </div>
 </template>
@@ -28,22 +30,28 @@ export default {
 }
 </script>
 <style>
-.list{
-    display: inline-block;
-    margin: 1%;
-}
-.img-parent{
-    width: 15%;
-}
-.img-locate{
-    max-width: 100%;
-    height: auto;
-}
 @media (max-width: 500px) {
     .img-locate{
     max-width: 300%;
     height: auto;
     margin: 0 auto;
   }
+}
+.list{
+    display: inline-block;
+    margin: 1%;
+}
+.img-parent{
+    width: 15%;
+    min-width: 15%;
+}
+.img-locate{
+    max-width: 100%;
+    height: auto;
+}
+.text-wrap{
+    min-width: 200px;
+    max-width: 200px;
+    word-wrap: break-word;
 }
 </style>
