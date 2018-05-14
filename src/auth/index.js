@@ -1,31 +1,35 @@
 import {router} from '../router/index.js'
+import axios from 'axios'
 
 const API_URL = 'http://localhost:3000/api/'
 const LOGIN_URL = API_URL + 'auth/login/'
 
 export default {
   login (context, creds, redirect) {
-    context.$http.post(LOGIN_URL, creds).then(response => {
+    axios.post(LOGIN_URL, creds).then((response) => {
       localStorage.setItem('idea_token', response.data.token)
+      axios.defaults.headers.common['x-access-token'] = localStorage.getItem('idea_token')
       if (redirect) {
         router.push(redirect)
       }
-    }, response => {
+    }, (response) => {
       if (localStorage.getItem('idea_token')) {
         localStorage.removeItem('idea_token')
       }
+      context.error = 'ID, PW를 확인해주세요'
     })
   },
   logout () {
-    localStorage.removeItem('idea_token')
+    delete localStorage.idea_token
+    axios.defaults.headers.common['x-access-token'] = undefined
+    router.push('/')
   },
-  checkAuth (context) {
+  checkAuth () {
     var jwt = localStorage.getItem('idea_token')
-    console.log(router)
     if (jwt) {
       router.push('/home')
     } else {
-      router.push({name: 'Login'})
+      router.push('/')
     }
   }
 }

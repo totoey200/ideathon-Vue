@@ -7,7 +7,7 @@ import axios from 'axios'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-Vue.prototype.$http = axios
+axios.defaults.headers.common['x-access-token'] = localStorage.getItem('idea_token')
 
 Vue.config.productionTip = false
 

@@ -28,6 +28,7 @@
 </template>
 <script>
 import auth from '../auth'
+import axios from 'axios'
 
 export default {
   name: 'Login',
@@ -49,7 +50,10 @@ export default {
       console.log(credentials)
       auth.login(this, credentials, '/home')
     }
+  },
+  beforeCreate () {
+    console.log(axios.defaults.headers.common['x-access-token'])
+    auth.checkAuth()
   }
-
 }
 </script>
