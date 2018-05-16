@@ -1,15 +1,21 @@
 <template>
   <div class="hello">
     <my-nav/>
-    <span v-for="idea in ideas" :key="idea.id">
-      <team-card :title='idea.title' :content='idea.content' :img_url='idea.img_url' :vote_cnt='idea.vote_cnt' :name='idea.name'></team-card>
-    </span>
+    <div v-if=0>
+      <span v-for="idea in ideas" :key="idea.id">
+        <team-card :title='idea.title' :content='idea.content' :img_url='idea.img_url' :vote_cnt='idea.vote_cnt' :name='idea.name'></team-card>
+      </span>
+    </div>
+    <div v-else>
+      <vote-page/>>
+    </div>
   </div>
 </template>
 
 <script>
 import Nav from './Nav.vue'
 import Card from './Card.vue'
+import Vote from './Vote.vue'
 import axios from 'axios'
 export default {
   name: 'HelloWorld',
@@ -20,7 +26,8 @@ export default {
   },
   components: {
     'team-card': Card,
-    'my-nav': Nav
+    'my-nav': Nav,
+    'vote-page': Vote
   },
   beforeCreate () {
     axios.get('http://localhost:3000/api/idea').then((response) => {
