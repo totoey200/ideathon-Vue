@@ -7,7 +7,7 @@
       </span>
     </div>
     <div v-else>
-      <vote-page/>>
+      <vote-page/>
     </div>
   </div>
 </template>
