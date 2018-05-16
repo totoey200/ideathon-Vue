@@ -45,5 +45,8 @@ export default {
   img {
     height: 1.5rem;
   }
+  .nav-link{
+    cursor: pointer;
+  }
 </style>
 
