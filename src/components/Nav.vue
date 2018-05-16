@@ -7,9 +7,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-item nav-link" @click="createidea()">아이디어 만들기</a>
-        <a class="nav-item nav-link" @click="editidea()">아이디어 수정</a>
-        <a class="nav-item nav-link" @click="logout()">로그아웃</a>
+        <div class="nav-item nav-link" @click="createidea()">아이디어 만들기</div>
+        <div class="nav-item nav-link" @click="editidea()">아이디어 수정</div>
+        <div class="nav-item nav-link" @click="logout()">로그아웃</div>
       </div>
     </div>
   </nav>
