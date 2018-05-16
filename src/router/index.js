@@ -8,7 +8,6 @@ import EditIdea from '@/components/EditIdea'
 Vue.use(Router)
 
 export var router = new Router({
-  mode: 'history',
   routes: [
     {
       path: '/',
