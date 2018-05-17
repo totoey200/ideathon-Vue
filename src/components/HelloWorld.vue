@@ -57,4 +57,7 @@ li {
 a {
   color: #42b983;
 }
+team-card{
+  width: 100%;
+}
 </style>

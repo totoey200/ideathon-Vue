@@ -3,7 +3,6 @@
     <div>
         <h1>투표페이지</h1>
         <div class="mb-3">
-        <span class="msghide">{{msg}}</span>
         </div>
         <h2>본인이 맞는지 확인하세요!</h2>
         <div>
@@ -38,11 +37,13 @@ export default {
     voteNow () {
       axios.post('http://ec2-13-125-210-103.ap-northeast-2.compute.amazonaws.com:3000/api/idea/vote/now').then((response) => {
         this.msg = response.data.message
+        alert(this.msg)
       },
       (response) => {
         this.msg = response.response.data.message
+        alert(this.msg)
       })
-      document.getElementsByClassName('msghide')[0].classList.remove('msghide')
+
     }
   },
   beforeCreate(){
@@ -60,8 +61,5 @@ export default {
 <style scoped>
 h1, h2 {
   font-weight: normal;
-}
-.msghide{
-  visibility: hidden;
 }
 </style>

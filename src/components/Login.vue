@@ -47,7 +47,6 @@ export default {
         username: this.credentials.username,
         password: this.credentials.password
       }
-      console.log(credentials)
       auth.login(this, credentials, '/home')
     }
   },
