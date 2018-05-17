@@ -33,16 +33,24 @@ export default {
       this.$router.push('/createidea')
     },
     editidea(){
-      // axios.get('').then((rep)=>{
-      //   this.id = rep.data.id
-      // })
+      axios.get('http://ec2-13-125-210-103.ap-northeast-2.compute.amazonaws.com:3000/api/user/me').then((rep)=>{
+        this.id = rep.data.team_id
+      })
+      axios.get('http://ec2-13-125-210-103.ap-northeast-2.compute.amazonaws.com:3000/api/idea').then((rep)=>{
+        var ideas = rep.data.result
+        for(var idea in ideas){
+          if(ideas[idea].team_id == this.id){
+            this.id = ideas[idea].id
+          }
+        }
+      })
       this.$router.push('/editidea/' + this.id)
     }
   }
 }
 </script>
 <style>
-  img {
+  .navbar-brand img {
     height: 1.3rem;
   }
   .nav-link{

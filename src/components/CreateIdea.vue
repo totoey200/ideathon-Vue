@@ -60,7 +60,7 @@ export default {
         content: this.idea.content,
         team_name: this.idea.team_name
       }
-      axios.post('http://localhost:3000/api/idea',idea).then((rep) => {
+      axios.post('http://ec2-13-125-210-103.ap-northeast-2.compute.amazonaws.com:3000/api/idea',idea).then((rep) => {
         this.$router.push('/home')
       })
     }

@@ -33,13 +33,13 @@ export default {
         content: this.idea.content
       }
       console.log(idea)
-      axios.put('http://localhost:3000/api/idea/' + this.$route.params.id, idea).then((rep) => {
+      axios.put('http://ec2-13-125-210-103.ap-northeast-2.compute.amazonaws.com:3000/api/idea/' + this.$route.params.id, idea).then((rep) => {
         this.$router.push('/home')
       })
     },
     fetchdata () {
       console.log(this.$route.params.id)
-      axios.get('http://localhost:3000/api/idea').then((rep) => {
+      axios.get('http://ec2-13-125-210-103.ap-northeast-2.compute.amazonaws.com:3000/api/idea').then((rep) => {
         var ideas = rep.data.result
         console.log(ideas)
         for (var idea in ideas) {

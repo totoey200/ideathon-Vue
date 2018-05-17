@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <div v-if=0>
+    <div v-if="isAdmin">
       <span v-for="idea in ideas" :key="idea.id">
         <team-card :title='idea.title' :content='idea.content' :img_url='idea.img_url' :vote_cnt='idea.vote_cnt' :name='idea.name'></team-card>
       </span>
@@ -19,7 +19,8 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      ideas: ''
+      ideas: '',
+      isAdmin: false
     }
   },
   components: {
@@ -27,11 +28,14 @@ export default {
     'vote-page': Vote
   },
   beforeCreate () {
-    axios.get('http://localhost:3000/api/idea').then((response) => {
+    axios.get('http://ec2-13-125-210-103.ap-northeast-2.compute.amazonaws.com:3000/api/idea').then((response) => {
       this.ideas = response.data.result
     },
     (response) => {
       this.$router.push('/')
+    })
+    axios.get('http://ec2-13-125-210-103.ap-northeast-2.compute.amazonaws.com:3000/api/user/admin').then((rep)=>{
+      this.isAdmin = rep.data.isAdmin
     })
   }
 }

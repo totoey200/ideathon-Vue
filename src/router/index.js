@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Login from '@/components/Login'
 import CreateIdea from '@/components/CreateIdea'
 import EditIdea from '@/components/EditIdea'
+import auth from '../auth'
 
 Vue.use(Router)
 
@@ -38,7 +39,7 @@ export var router = new Router({
 
 router.beforeEach((to, from, next)=>{
   if(to.meta.auth){
-    if(!localStorage.getItem['idea_token']){
+    if(auth.authenticated){
       next()
     }
     else{

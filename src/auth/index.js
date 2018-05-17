@@ -3,12 +3,14 @@ import axios from 'axios'
 
 const API_URL = 'http://localhost:3000/api/'
 const LOGIN_URL = API_URL + 'auth/login/'
+var authenticated = false
 
 export default {
   login (context, creds, redirect) {
     axios.post(LOGIN_URL, creds).then((response) => {
       localStorage.setItem('idea_token', response.data.token)
       axios.defaults.headers.common['x-access-token'] = localStorage.getItem('idea_token')
+      this.authenticated = true
       if (redirect) {
         router.push(redirect)
       }
@@ -17,11 +19,13 @@ export default {
         localStorage.removeItem('idea_token')
       }
       context.error = 'ID, PW를 확인해주세요'
+      this.authenticated = false
     })
   },
   logout () {
     delete localStorage.idea_token
     axios.defaults.headers.common['x-access-token'] = undefined
+    this.authenticated = false
     router.push('/')
   },
   checkAuth () {
