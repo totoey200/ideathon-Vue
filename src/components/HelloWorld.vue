@@ -2,7 +2,7 @@
   <div class="hello">
     <div v-if="isAdmin">
       <span v-for="idea in ideas" :key="idea.id">
-        <team-card :title='idea.title' :content='idea.content' :img_url='idea.img_url' :vote_cnt='idea.vote_cnt' :name='idea.name'></team-card>
+        <team-card class="mycard" :title='idea.title' :content='idea.content' :img_url='idea.img_url' :vote_cnt='idea.vote_cnt' :name='idea.name'></team-card>
       </span>
     </div>
     <div v-else>
@@ -57,7 +57,7 @@ li {
 a {
   color: #42b983;
 }
-team-card{
+.mycard{
   width: 100%;
 }
 </style>

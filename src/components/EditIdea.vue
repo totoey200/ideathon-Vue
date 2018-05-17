@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>아이디어 생성</h1>
+    <h1>아이디어 수정</h1>
     <div class="form-group">
       <label>아이디어 이름</label>
       <input type="text" class="form-control" maxlength="50" v-model="idea.title" placeholder="아이디어 이름">

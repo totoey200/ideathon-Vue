@@ -43,7 +43,8 @@ export default {
     min-width: 15%;
 }
 .img-locate{
-    max-width: 100%;
+    max-width: 200px;
+    max-height: 200px;
     height: auto;
 }
 .text-wrap{
