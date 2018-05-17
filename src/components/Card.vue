@@ -11,9 +11,6 @@
                 <div class="align-self-center">
                     <p class="mb-1 text-wrap">{{content}}</p>
                 </div >
-                <div class="align-self-center">
-                    <a href="#" class="btn btn-primary">투표하기</a>
-                </div>
                 <div>
                     <small>{{vote_cnt}} vote</small>
                 </div>

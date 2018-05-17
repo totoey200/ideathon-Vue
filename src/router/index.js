@@ -36,10 +36,9 @@ export var router = new Router({
     }
   ]
 })
-
 router.beforeEach((to, from, next)=>{
   if(to.meta.auth){
-    if(auth.authenticated){
+    if(localStorage.getItem('idea_token')){
       next()
     }
     else{
