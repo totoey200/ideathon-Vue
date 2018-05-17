@@ -6,11 +6,12 @@
         accept="image/png,image/jpeg"
         image-class="v1-image"
         input-class="v1-input"
+        default-preview="true"
         :max-size="customImageMaxSize"
         @size-exceeded="onSizeExceeded"
         @file="onFile"
         @load="onLoad"
-        placeholder="Click here to upload image (이미지는 jpg, png만 업로드 가능합니다.)" />
+        placeholder="Click here to upload image (이미지는 3MB 미만의 jpg, png만 업로드 가능합니다.)" />
     <div class="form-group">
       <label>아이디어 이름</label>
       <input type="text" class="form-control" maxlength="50" v-model="idea.title" placeholder="아이디어 이름">
@@ -35,7 +36,8 @@ export default {
       customImageMaxSize: 3, // megabytes
       idea: {
         title: '',
-        content: ''
+        content: '',
+        base64: ''
       }
     }
   },
@@ -58,7 +60,7 @@ export default {
       var idea = {
         title: this.idea.title,
         content: this.idea.content,
-        team_name: this.idea.team_name
+        base64: this.idea.base64 = document.getElementsByClassName("v1-image")[0].src
       }
       axios.post('http://ec2-13-125-210-103.ap-northeast-2.compute.amazonaws.com:3000/api/idea',idea).then((rep) => {
         this.$router.push('/home')
