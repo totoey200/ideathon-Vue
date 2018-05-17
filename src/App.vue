@@ -1,12 +1,17 @@
 <template>
   <div id="app">
-    <router-view/>
+    <my-nav/>
+    <router-view class="hello"/>
   </div>
 </template>
 
 <script>
+import Nav from './components/Nav.vue'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    'my-nav': Nav
+  }
 }
 </script>
 
@@ -17,5 +22,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+.hello{
+  margin-top: 4rem;
 }
 </style>

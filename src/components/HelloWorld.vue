@@ -1,6 +1,5 @@
 <template>
   <div class="hello">
-    <my-nav/>
     <div v-if=0>
       <span v-for="idea in ideas" :key="idea.id">
         <team-card :title='idea.title' :content='idea.content' :img_url='idea.img_url' :vote_cnt='idea.vote_cnt' :name='idea.name'></team-card>
@@ -13,7 +12,6 @@
 </template>
 
 <script>
-import Nav from './Nav.vue'
 import Card from './Card.vue'
 import Vote from './Vote.vue'
 import axios from 'axios'
@@ -26,7 +24,6 @@ export default {
   },
   components: {
     'team-card': Card,
-    'my-nav': Nav,
     'vote-page': Vote
   },
   beforeCreate () {
@@ -55,8 +52,5 @@ li {
 }
 a {
   color: #42b983;
-}
-.hello{
-  margin-top: 4rem;
 }
 </style>

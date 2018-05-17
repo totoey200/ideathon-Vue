@@ -19,10 +19,6 @@
       <label>아이디어 설명</label>
       <input type="text" class="form-control" maxlength="50" v-model="idea.content" placeholder="한줄로 간단하게 적어주세요">
     </div>
-    <div class="form-group">
-      <label>팀 이름</label>
-      <input type="text" class="form-control" maxlength="50" v-model="idea.team_name" placeholder="팀 이름">
-    </div>
     <a href="#" class="mr-1" @click="card()">돌아가기</a>
     <button class="btn btn-primary" @click="submit()">Submit</button>
   </div>
@@ -39,8 +35,7 @@ export default {
       customImageMaxSize: 3, // megabytes
       idea: {
         title: '',
-        content: '',
-        team_name: ''
+        content: ''
       }
     }
   },

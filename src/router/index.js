@@ -12,22 +12,40 @@ export var router = new Router({
     {
       path: '/',
       name: 'Login',
-      component: Login
+      component: Login,
+      meta: {auth: false}
     },
     {
       path: '/home',
       name: 'HelloWorld',
-      component: HelloWorld
+      component: HelloWorld,
+      meta: {auth: true}
     },
     {
       path: '/createidea',
       name: 'CreateIdea',
-      component: CreateIdea
+      component: CreateIdea,
+      meta: {auth: true}
     },
     {
       path: '/editidea/:id',
       name: 'EditIdea',
-      component: EditIdea
+      component: EditIdea,
+      meta: {auth: true}
     }
   ]
+})
+
+router.beforeEach((to, from, next)=>{
+  if(to.meta.auth){
+    if(!localStorage.getItem['idea_token']){
+      next()
+    }
+    else{
+      next('/')
+    }
+  }
+  else{
+    next()
+  }
 })
