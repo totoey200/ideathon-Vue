@@ -1,7 +1,7 @@
 import {router} from '../router/index.js'
 import axios from 'axios'
 
-const API_URL = 'http://ec2-13-125-210-103.ap-northeast-2.compute.amazonaws.com:3000/api/'
+const API_URL = '//ec2-13-125-210-103.ap-northeast-2.compute.amazonaws.com:3000/api/'
 const LOGIN_URL = API_URL + 'auth/login/'
 
 export default {
