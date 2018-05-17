@@ -22,7 +22,7 @@ export default {
   name: 'Nav',
   data () {
     return {
-      id: '1'
+      id: ''
     }
   },
   methods: {
@@ -39,7 +39,9 @@ export default {
       axios.get('http://ec2-13-125-210-103.ap-northeast-2.compute.amazonaws.com:3000/api/idea').then((rep)=>{
         var ideas = rep.data.result
         for(var idea in ideas){
+          console.log(ideas[idea].team_id)
           if(ideas[idea].team_id == this.id){
+            console.log(ideas[idea].team_id)
             this.id = ideas[idea].id
           }
         }
