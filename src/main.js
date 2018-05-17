@@ -8,6 +8,7 @@ import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 axios.defaults.headers.common['x-access-token'] = localStorage.getItem('idea_token')
+axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*'
 
 Vue.config.productionTip = false
 
