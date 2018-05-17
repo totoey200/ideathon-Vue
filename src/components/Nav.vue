@@ -1,6 +1,6 @@
 <template>
 <div>
-  <nav class="navbar navbar-expand-lg justify-content-between fixed-top bg-custom">
+  <nav class="navbar navbar-expand-lg justify-content-between bg-custom">
     <a class="navbar-brand" href="/"><img src="../assets/logo_yellow.png" alt="logo"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -65,5 +65,6 @@ export default {
   .f-color:hover{
     color: #D8AC45BE
   }
+  
 </style>
 

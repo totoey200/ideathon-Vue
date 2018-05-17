@@ -24,6 +24,5 @@ export default {
   color: #2c3e50;
 }
 .hello{
-  margin-top: 4rem;
 }
 </style>
