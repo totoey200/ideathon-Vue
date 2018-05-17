@@ -9,7 +9,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 axios.defaults.headers.common['x-access-token'] = localStorage.getItem('idea_token')
 axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*'
-axios.defaults.headers.common['Access-Control-Request-Method'] = '*'
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
