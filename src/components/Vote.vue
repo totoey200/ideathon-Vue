@@ -77,8 +77,8 @@ h3 {
 }
 .btn-outline-primary:not(:disabled):not(.disabled).active, .btn-outline-primary:not(:disabled):not(.disabled):active, .show>.btn-outline-primary.dropdown-toggle {
   color: #fff;
-  background-color: #182C66;
-  border-color: #182c67;
+  background-color: #d8ac45;
+  border-color: #d8ac45;
 }
 .btn-outline-primary {
   color: #d8ac45;
