@@ -81,10 +81,14 @@ h3 {
   border-color: #182c67;
 }
 .btn-outline-primary {
-  color: #182c67;
-  background-color: transparent;
+  color: #d8ac45;
+  background-color: #182c67;
   background-image: none;
   border-color: #182c67;
+}
+a {
+      padding-top: 15px;
+    padding-bottom: 15px;
 }
 li {
   list-style-type: none;
