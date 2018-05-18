@@ -1,17 +1,20 @@
 <template>
   <div class="container">
     <h1>아이디어 생성</h1>
-    <vue-base64-file-upload
-        class="v1"
-        accept="image/png,image/jpeg"
-        image-class="v1-image"
-        input-class="v1-input"
-        default-preview="true"
-        :max-size="customImageMaxSize"
-        @size-exceeded="onSizeExceeded"
-        @file="onFile"
-        @load="onLoad"
-        placeholder="Click here to upload image (이미지는 3MB 미만의 jpg, png만 업로드 가능합니다.)" />
+    <picture-input
+      ref="pictureInput" 
+      @change="onChange" 
+      width="400" 
+      height="400" 
+      margin="16" 
+      accept="image/jpeg,image/png" 
+      size="10" 
+      buttonClass="btn"
+      :customStrings="{
+        upload: '<h1>Bummer!</h1>',
+        drag: 'Drag a 😺 GIF or GTFO'
+      }">
+    </picture-input>
     <div class="form-group">
       <label>아이디어 이름</label>
       <input type="text" class="form-control" maxlength="50" v-model="idea.title" placeholder="아이디어 이름">
@@ -27,13 +30,12 @@
 <script>
 import axios from 'axios'
 import Vue from 'vue';
-import VueBase64FileUpload from 'vue-base64-file-upload';
+import PictureInput from 'vue-picture-input';
 
 export default {
   name: 'CreateIdea',
   data () {
     return {
-      customImageMaxSize: 3, // megabytes
       idea: {
         title: '',
         content: '',
@@ -45,22 +47,25 @@ export default {
     onFile(file) {
       console.log(file); // file object
     },
-
     onLoad(dataUri) {
       console.log(dataUri); // data-uri string
     },
-
-    onSizeExceeded(size) {
-      alert(`Image ${size}Mb size exceeds limits of ${this.customImageMaxSize}Mb!`);
-    },
     card(){
       this.$router.push('/home')
+    },
+    onChange () {
+      console.log('New picture selected!')
+      if (this.$refs.pictureInput.image) {
+        console.log('Picture loaded.')
+      } else {
+        console.log('FileReader API not supported: use the <form>, Luke!')
+      }
     },
     submit () {
       var idea = {
         title: this.idea.title,
         content: this.idea.content,
-        base64: this.idea.base64 = document.getElementsByClassName("v1-image")[0].src
+        base64: this.idea.base64 = this.$refs.pictureInput.image
       }
       axios.post('http://ec2-13-125-210-103.ap-northeast-2.compute.amazonaws.com:3000/api/idea',idea).then((rep) => {
         this.$router.push('/home')
@@ -68,7 +73,7 @@ export default {
     }
   },
   components: {
-    VueBase64FileUpload
+    PictureInput
   }
 }
 </script>
