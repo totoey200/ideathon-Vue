@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>아이디어 생성</h1>
+    <h3>아이디어 생성</h3>
     <picture-input
       ref="pictureInput"
       @change="onChange"
@@ -11,7 +11,7 @@
       size="10"
       buttonClass="btn"
       :customStrings="{
-        upload: '<h2>Bummer!</h2>',
+        upload: '<h4>Bummer!</h4>',
         drag: '서비스 대표 이미지 업로드🦁'
       }">
     </picture-input>
@@ -73,7 +73,10 @@ export default {
     border: 1px solid #ddd;
     padding: 5px;
 }
-h1{
-  margin: 2%;
+h3 {
+  font-weight: bold;
+  color: #182c67;
+  margin-bottom: 20px;
+  margin-top:15px;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>아이디어 수정</h1>
+    <h3>아이디어 수정</h3>
     <div class="form-group">
       <label>아이디어 이름</label>
       <input type="text" class="form-control" maxlength="50" v-model="idea.title" placeholder="아이디어 이름">
@@ -61,3 +61,11 @@ export default {
   }
 }
 </script>
+<style>
+h3 {
+  font-weight: bold;
+  color: #182c67;
+  margin-bottom: 20px;
+  margin-top:15px;
+}
+</style>
