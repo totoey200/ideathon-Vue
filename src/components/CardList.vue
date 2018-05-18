@@ -2,10 +2,11 @@
   <div v-if="isAdmin">
     <button class="btn btn-outline-primary btn-lg btn-block showbtn" @click="showrank()">결과보기</button>
       <span v-if="nowidea">
-        <team-card class="mycard nowidea animated flipInX"  :title='nowidea.title' :content='nowidea.content' :img_url='nowidea.img_url' :vote_cnt='nowidea.vote_cnt' :name='nowidea.name'></team-card>
+        <team-card class="mycard nowidea animated zoomInRight"  :title='nowidea.title' :content='nowidea.content' :img_url='nowidea.img_url' :vote_cnt='nowidea.vote_cnt' :name='nowidea.name'></team-card>
       </span>
-      <span v-for="idea in ideas" :key="idea.id">
-        <team-card v-if="idea.status!==0" class="mycard animated flipInX" :title='idea.title' :content='idea.content' :img_url='idea.img_url' :vote_cnt='idea.vote_cnt' :name='idea.name'></team-card>
+      <span v-for="(idea, index) in ideas" :key="idea.id">
+        <team-card v-if="idea.status!==0 && index==0" class="mycard winner animated flipInX" :title='idea.title' :content='idea.content' :img_url='idea.img_url' :vote_cnt='idea.vote_cnt' :name='idea.name'></team-card>
+        <team-card v-if="idea.status!==0 && index!==0" class="mycard" :title='idea.title' :content='idea.content' :img_url='idea.img_url' :vote_cnt='idea.vote_cnt' :name='idea.name'></team-card>
       </span>
   </div>
 </template>
@@ -54,6 +55,7 @@ export default {
 h1, h2 {
   font-weight: normal;
 }
+
 ul {
   list-style-type: none;
   padding: 0;
