@@ -2,13 +2,13 @@
   <div class="container">
     <h1>아이디어 생성</h1>
     <picture-input
-      ref="pictureInput" 
-      @change="onChange" 
-      width="400" 
-      height="400" 
-      margin="16" 
-      accept="image/jpeg,image/png" 
-      size="10" 
+      ref="pictureInput"
+      @change="onChange"
+      width="400"
+      height="400"
+      margin="16"
+      accept="image/jpeg,image/png"
+      size="10"
       buttonClass="btn"
       :customStrings="{
         upload: '<h1>Bummer!</h1>',
@@ -68,6 +68,10 @@ export default {
         base64: this.idea.base64 = this.$refs.pictureInput.image
       }
       axios.post('http://ec2-13-125-210-103.ap-northeast-2.compute.amazonaws.com:3000/api/idea',idea).then((rep) => {
+        this.$router.push('/home')
+      },
+      (rep) => {
+        alert(rep.response.data.message)
         this.$router.push('/home')
       })
     }
