@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Login from '@/components/Login'
 import CreateIdea from '@/components/CreateIdea'
 import EditIdea from '@/components/EditIdea'
+import CardList from '@/components/CardList'
 import auth from '../auth'
 
 Vue.use(Router)
@@ -33,19 +34,23 @@ export var router = new Router({
       name: 'EditIdea',
       component: EditIdea,
       meta: {auth: true}
+    },
+    {
+      path: '/adminpage',
+      name: 'CardList',
+      component: CardList,
+      meta: { auth: true }
     }
   ]
 })
-router.beforeEach((to, from, next)=>{
+router.beforeEach((to, from, next) => {
   if(to.meta.auth){
     if(localStorage.getItem('idea_token')){
       next()
-    }
-    else{
+    } else{
       next('/')
     }
-  }
-  else{
+  } else{
     next()
   }
 })

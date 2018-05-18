@@ -5,17 +5,19 @@
                 <div class="img-parent">
                     <img class="img-locate" :src='img_url' alt="Card image cap">
                 </div>
-                <div class="align-self-center">
-                        <h5 class="m-0 text-wrap">{{title}}</h5>
-                    </div>
-                <div class="align-self-center">
-                    <p class="mb-1 text-wrap">{{content}}</p>
-                </div >
-                <div>
-                    <small>{{vote_cnt}} vote</small>
+                <div class="align-self-center text-wrap">
+                    <p id="list-title">{{title}}</p>
+                </div>
+                <div class="align-self-center text-wrap">
+                    <p class="list-content">{{content}}</p>
+                </div>
+                <div class="align-self-center text-wrap">
+                    <p class="list-content">팀명 : {{name}}</p>
+                </div>
+                <div class="align-self-center text-wrap">
+                    <p id="list-vote">{{vote_cnt}} vote</p>
                 </div>
             </div>
-            <small>팀명 : {{name}}</small>
         </div>
     </div>
 </template>
@@ -41,15 +43,25 @@ export default {
 .img-parent{
     width: 15%;
     min-width: 15%;
-}
-.img-locate{
-    max-width: 200px;
-    max-height: 200px;
-    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .text-wrap{
     min-width: 200px;
     max-width: 200px;
     word-wrap: break-word;
+}
+img {
+    max-width: 150px;
+    max-height: 150px;
+}
+p#list-title {
+    font-weight: bold;
+    font-size: 25px;
+}
+p#list-vote {
+    font-weight: bold;
+    font-size: 25px;
 }
 </style>

@@ -1,7 +1,12 @@
 <template>
   <div class="col-sm-4 col-sm-offset-4 mr-auto ml-auto">
-    <h2>Log In</h2>
-    <p>연합아이디어톤에 오신걸 환영합니다!</p>
+    <h3>연합아이디어톤 투표시스템</h3>
+    <div class="logo-list">
+      <img src="../assets/images/한양대.png" width="80px">
+      <img src="../assets/images/산기대w.png" width="80px">
+      <img src="../assets/images/인하대.png" width="80px">
+      <img src="../assets/images/숙대e.png" width="80px">
+    </div>
     <div class="alert alert-danger" v-if="error">
       <p>{{ error }}</p>
     </div>
@@ -55,3 +60,14 @@ export default {
   }
 }
 </script>
+<style scoped>
+h3 {
+  margin-top:15px;
+  font-weight: bold;
+  color: #182c67;
+  margin-bottom: 20px;
+}
+.logo-list {
+  margin-bottom: 15px;
+}
+</style>
