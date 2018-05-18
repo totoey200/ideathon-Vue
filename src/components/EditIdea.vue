@@ -57,7 +57,7 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 h3 {
   font-weight: bold;
   color: #182c67;

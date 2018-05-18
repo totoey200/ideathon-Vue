@@ -67,7 +67,7 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 .container img {
     width: 80%;
     border: 1px solid #ddd;
