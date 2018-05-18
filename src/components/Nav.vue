@@ -6,7 +6,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
+      <div v-if="isLogin" class="navbar-nav">
         <div class="nav-item nav-link f-color" @click="createidea()">아이디어 만들기</div>
         <div class="nav-item nav-link f-color" @click="editidea()">아이디어 수정</div>
         <div class="nav-item nav-link f-color" @click="logout()">로그아웃</div>
@@ -22,7 +22,26 @@ export default {
   name: 'Nav',
   data () {
     return {
-      id: ''
+      id: '',
+      isLogin: ''
+    }
+  },
+  watch:{
+    '$route'(to, from){
+      if(localStorage.getItem('idea_token')){
+        this.isLogin = true
+      }
+      else{
+        this.isLogin = false
+      }
+    }
+  },
+  beforeMount () {
+    if(localStorage.getItem('idea_token')){
+      this.isLogin = true
+    }
+    else{
+      this.isLogin = false
     }
   },
   methods: {
@@ -65,6 +84,6 @@ export default {
   .f-color:hover{
     color: #D8AC45BE
   }
-  
+
 </style>
 
