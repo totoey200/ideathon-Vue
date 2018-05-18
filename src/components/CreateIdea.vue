@@ -11,8 +11,8 @@
       size="10"
       buttonClass="btn"
       :customStrings="{
-        upload: '<h1>Bummer!</h1>',
-        drag: 'Drag a 😺 GIF or GTFO'
+        upload: '<h2>Bummer!</h2>',
+        drag: '서비스 대표 이미지 업로드🦁'
       }">
     </picture-input>
     <div class="form-group">
@@ -44,22 +44,8 @@ export default {
     }
   },
   methods: {
-    onFile(file) {
-      console.log(file); // file object
-    },
-    onLoad(dataUri) {
-      console.log(dataUri); // data-uri string
-    },
     card(){
       this.$router.push('/home')
-    },
-    onChange () {
-      console.log('New picture selected!')
-      if (this.$refs.pictureInput.image) {
-        console.log('Picture loaded.')
-      } else {
-        console.log('FileReader API not supported: use the <form>, Luke!')
-      }
     },
     submit () {
       var idea = {
@@ -86,5 +72,8 @@ export default {
     width: 80%;
     border: 1px solid #ddd;
     padding: 5px;
+}
+h1{
+  margin: 2%;
 }
 </style>
