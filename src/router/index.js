@@ -39,7 +39,7 @@ export var router = new Router({
       path: '/adminpage',
       name: 'CardList',
       component: CardList,
-      meta: { auth: true }
+      meta: { auth: true, admin: true}
     }
   ]
 })

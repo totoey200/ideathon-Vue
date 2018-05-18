@@ -1,8 +1,8 @@
 <template>
   <div>
-    
+
       <vote-page/>
-    
+
   </div>
 </template>
 
@@ -37,7 +37,6 @@ export default {
       })
       axios.get('http://ec2-13-125-210-103.ap-northeast-2.compute.amazonaws.com:3000/api/idea/pr/now').then((rep2)=>{
         this.nowidea = rep2.data.result[0]
-        console.log(this.nowidea)
       })
   }
 }

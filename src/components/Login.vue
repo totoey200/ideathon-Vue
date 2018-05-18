@@ -52,7 +52,7 @@ export default {
         username: this.credentials.username,
         password: this.credentials.password
       }
-      auth.login(this, credentials, '/home')
+      auth.login(this, credentials)
     }
   },
   beforeCreate () {
